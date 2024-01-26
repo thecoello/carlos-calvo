@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+#nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 99;
+  padding: 2rem 0;
+  opacity: 0;
+
+  #logo {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    span {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      color: #000000;
+    }
+  }
+  #menu {
+    width: 100% - 20%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    #btnMenu{
+      width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+      #lineUp{
+        background-color: #000000;
+        width: 2rem;
+        height: 0.2rem;
+        position: relative;
+        margin: 0.1rem 0;
+      }
+
+      #lineDown{
+        @extend #lineUp
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: max-content;
+  display: flex;
+}
+
+.section {
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  left: 0;
+}
+
+.loading {
+  background-color: #000000;
+  @extend .section;
+}
+
+.textIntro {
+  width: 100%;
+  position: relative;
+  left: 0;
+}
+
+.wrapperText {
+  overflow: hidden;
+  width: max-content;
+  white-space: nowrap;
+
+  span {
+    font-size: 9rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ffffff;
+  }
+}
+
+#intro {
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/images/intro.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#projectWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+
+  .projectsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    .project {
+      overflow: hidden;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 180%;
+      width: calc(12vw - 16px);
+      height: calc(12vw - 16px);
+      margin: 0.5rem;
+      cursor: pointer;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+    }
+  }
+}
