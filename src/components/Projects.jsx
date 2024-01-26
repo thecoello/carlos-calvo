@@ -1,6 +1,6 @@
 import React from "react";
 import gsap from "gsap";
-import "../../public/images/soles.png"
+import "./../../public/images/soles.png"
 
 export default class Projects extends React.Component {
 
@@ -25,21 +25,21 @@ export default class Projects extends React.Component {
     return (
       <div id="projectWrapper">
         <div className="projectsContainer">
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
-          <div className="project"><img src="../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
+          <div className="project"><img src="./../../public/images/soles.png" alt="" /></div>
         </div>
       </div>
     )
