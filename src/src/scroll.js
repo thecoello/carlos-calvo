@@ -10,7 +10,7 @@ export default class Scroll {
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
       direction: "horizontal",
-      lerp: 0.025
+      lerp: 0.03
     })
 
     gsap.registerPlugin(ScrollTrigger);
@@ -60,15 +60,23 @@ export default class Scroll {
       },
     })
 
-    tl.fromTo("#nav", 2, {
-      yPercent: 20,
+     tl.fromTo("#lineUp", 2, {
+      xPercent: 20,
       opacity: 0,
-      ease: Expo.easeInOut,
+      ease: Expo.easeOut,
     }, {
-      yPercent: 0,
+      xPercent: 0,
       opacity: 1,
-      delay: 2.5
-    })
+    }) 
+
+    tl.fromTo("#lineDown", 2, {
+      xPercent: -10,
+      opacity: 0,
+      ease: Expo.easeOut,
+    }, {
+      xPercent: 0,
+      opacity: 1,
+    }) 
 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
