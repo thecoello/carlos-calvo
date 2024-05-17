@@ -13,7 +13,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loadingOff: false
+      loadingOff: false,
     }
   }
 
@@ -22,8 +22,25 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.introAnimation()
-    this.textAnimation()
+
+    const images = document.querySelectorAll('img')
+    let count = 0
+    images.forEach(image=>{
+      image.addEventListener('load',()=>{
+        count = count + 1
+        let percent = Math.round(100/images.length * count)
+
+        document.querySelector('#numberLoading').innerHTML = percent + '%'
+
+        if(count == images.length){
+          gsap.to('#numberLoading',0.5,{scale: 1.2, alpha: 0, ease: Expo.easeOut, onComplete:()=>{
+            this.introAnimation()
+            this.textAnimation()
+          }})
+          
+        }
+      })
+    })
   }
 
   introAnimation() {
@@ -35,6 +52,8 @@ export default class App extends React.Component {
       }
     })
     gsap.fromTo("#intro", 5, { backgroundSize: "150%", filter: "brightness(0)" }, { backgroundSize: "100%", filter: "brightness(1)", ease: Expo.easeInOut })
+    gsap.to(".textIntro", 5, { alpha: "1", delay: 1})
+
 
   }
 
@@ -42,9 +61,9 @@ export default class App extends React.Component {
     const textsIntro = document.querySelectorAll('.textIntro')
     textsIntro.forEach((textIntro, i) => {
       if (i % 2 === 0) {
-        gsap.fromTo(textIntro, { xPercent: 0 }, { xPercent: -100, repeat: -1, ease: Linear.easeNone, duration: 10 })
+        gsap.fromTo(textIntro, { xPercent: 0 }, { xPercent: -100, repeat: -1, ease: Linear.easeNone, duration: 20 })
       } else {
-        gsap.fromTo(textIntro, { xPercent: -100 }, { xPercent: 0, repeat: -1, ease: Linear.easeNone, duration: 10 })
+        gsap.fromTo(textIntro, { xPercent: -100 }, { xPercent: 0, repeat: -1, ease: Linear.easeNone, duration: 20 })
 
       }
     });
@@ -55,10 +74,12 @@ export default class App extends React.Component {
       <>
         <Nav />
 
-        <TextIntro />
+        
         <div data-scroll-container className="wrapper">
 
-          {!this.state.loadingOff ? <div className="loading"></div> : null}
+          {!this.state.loadingOff ? <div className="loading">
+            <span id="numberLoading">1%</span>
+          </div> : null}
 
           <div className="section">
             {<Intro />}

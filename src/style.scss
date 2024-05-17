@@ -106,9 +106,18 @@ body {
 .loading {
   background-color: #000000;
   @extend .section;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #numberLoading{
+    color: #ffffff;
+  }
 }
 
 .textIntro {
+  opacity: 0;
   width: 100%;
   position: relative;
 }
@@ -116,9 +125,9 @@ body {
 #textAnimation {
   display: flex;
   align-items: center;
-  background: #000000;
+  background: transparent;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
@@ -144,14 +153,14 @@ body {
 #intro {
   width: 100%;
   height: 100%;
-  background-image: url('./../public/images/intro.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 #projectWrapper {
@@ -179,6 +188,7 @@ body {
       cursor: pointer;
 
       img {
+        object-fit: cover;
         width: 100%;
         height: 100%;
       }

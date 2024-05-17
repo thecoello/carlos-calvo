@@ -33,15 +33,15 @@ export default class Scroll {
 
     function animationSection(id) {
       gsap.to(id, 2, {
-        xPercent: 100,
-        backgroundSize: "150%",
+        
+        width: "150%",
         ease: Linear.easeNone,
         scrollTrigger: {
           scroller: ".wrapper",
           horizontal: true,
           trigger: id,
           start: "top top",
-          end: "75%",
+          end: "100%",
           scrub: true,
         },
       },
