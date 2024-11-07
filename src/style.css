@@ -1,181 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-}
+@import "/node_modules/tailwindcss/base.css";
+@import "/node_modules/tailwindcss/components.css";
+@import "/node_modules/tailwindcss/utilities.css";
+@layer components {
+  * {
+    @apply m-0 p-0;
+    font-family: "Inter", sans-serif;
+  }
+  html,
+  body {
+    @apply bg-custom-grey-ligth;
+  }
 
-html,
-body {
-  overflow: hidden;
-}
-
-#nav {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  z-index: 99;
-  padding: 2rem 0;
-  align-items: center;
-  justify-content: space-between;
-  mix-blend-mode: difference;
-}
-#nav #logo {
-  width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: none;
-}
-#nav #logo span {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  color: #ffffff;
-  opacity: 0;
-}
-#nav #menu {
-  width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-direction: column;
-}
-#nav #menu #btnMenu {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem;
-}
-#nav #menu #btnMenu #lineUp, #nav #menu #btnMenu #lineDown {
-  background-color: #ffffff;
-  width: 2rem;
-  height: 0.2rem;
-  position: relative;
-  margin: 0.1rem 0;
-  opacity: 0;
+  .introContainer video {
+    @apply w-[100%] object-cover;
+  }
+  #nav {
+    @apply w-full fixed flex z-[99] p-[2rem] items-center justify-between mix-blend-difference;
+  }
+  #nav #logo {
+    @apply relative z-[2] cursor-none text-white;
+  }
+  #nav #logo span {
+    @apply uppercase text-[1.2rem] m-[0];
+  }
+  #nav #menu {
+    @apply w-[20%] flex flex-col items-end justify-center;
+  }
+  #nav #menu #btnMenu {
+    @apply w-auto h-auto flex flex-col pt-0 pb-0 pr-[2rem] pl-[2rem];
+  }
+  #nav #menu #btnMenu #lineUp, #nav #menu #btnMenu #lineDown {
+    @apply bg-white w-[2rem] h-[0.1rem] relative mt-[0.15rem] mb-[0.15rem] ml-0 mr-0;
+  }
 }
 #menuContent {
-  position: fixed;
-  z-index: 98;
-  margin: 2rem;
-  pointer-events: none;
+  @apply fixed z-[98] m-[2rem] pointer-events-none;
 }
 #menuContent ul {
-  list-style: none;
+  @apply list-none;
 }
 #menuContent ul li {
-  color: #ffffff;
-  font-size: 4rem;
-  opacity: 1;
-  cursor: pointer;
-  padding: 0.5rem 0;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.wrapper {
-  width: -moz-max-content;
-  width: max-content;
-  display: flex;
-}
-
-.section, .loading {
-  background-color: transparent;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  left: 0;
-}
-
-.loading {
-  background-color: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.loading #numberLoading {
-  color: #ffffff;
-}
-
-.textIntro {
-  opacity: 0;
-  width: 100%;
-  position: relative;
-}
-
-#textAnimation {
-  display: flex;
-  align-items: center;
-  background: transparent;
-  position: absolute;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  overflow: hidden;
-}
-#textAnimation .wrapperText {
-  overflow: hidden;
-  width: -moz-max-content;
-  width: max-content;
-  white-space: nowrap;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-}
-#textAnimation .wrapperText span {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 9rem;
-  color: transparent;
-  -webkit-text-stroke: 1px #ffffff;
-}
-
-#intro {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-#intro img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-#projectWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #ffffff;
-}
-#projectWrapper .projectsContainer {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-#projectWrapper .projectsContainer .project {
-  overflow: hidden;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 180%;
-  width: calc(12vw - 16px);
-  height: calc(12vw - 16px);
-  margin: 0.5rem;
-  cursor: pointer;
-}
-#projectWrapper .projectsContainer .project img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
+  @apply text-white text-[4rem] cursor-pointer pt-[0.5rem] pb-[0.5rem] pl-0 pr-0 opacity-0 hidden;
 }/*# sourceMappingURL=style.css.map */
